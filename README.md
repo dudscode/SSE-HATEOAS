@@ -31,34 +31,34 @@
   </thead>
   <tbody>
     <tr>
-      <td style="padding: 8px;">Protocolo</td>
-      <td style="padding: 8px;">HTTP unidirecional</td>
-      <td style="padding: 8px;">TCP bidirecional</td>
+      <td style="padding: 8px; text-align: center;" >Protocolo</td>
+      <td style="padding: 8px; text-align: center;">HTTP unidirecional</td>
+      <td style="padding: 8px; text-align: center;">TCP bidirecional</td>
     </tr>
     <tr>
-      <td style="padding: 8px;">Conexão</td>
-      <td style="padding: 8px;">Apenas o servidor envia dados ao cliente</td>
-      <td style="padding: 8px;">Cliente e servidor trocam mensagens em tempo real</td>
+      <td style="padding: 8px; text-align: center;">Conexão</td>
+      <td style="padding: 8px; text-align: center;">Apenas o servidor envia dados ao cliente</td>
+      <td style="padding: 8px; text-align: center;">Cliente e servidor trocam mensagens em tempo real</td>
     </tr>
     <tr>
-      <td style="padding: 8px;">Compatibilidade</td>
-      <td style="padding: 8px;">Suporte nativo em navegadores modernos (sem bibliotecas extras)</td>
-      <td style="padding: 8px;">Requer bibliotecas ou APIs específicas</td>
+      <td style="padding: 8px; text-align: center;">Compatibilidade</td>
+      <td style="padding: 8px; text-align: center;">Suporte nativo em navegadores modernos (sem bibliotecas extras)</td>
+      <td style="padding: 8px; text-align: center;">Requer bibliotecas ou APIs específicas</td>
     </tr>
     <tr>
-      <td style="padding: 8px;">Estado da conexão</td>
-      <td style="padding: 8px;">Reestabelece automaticamente a conexão em caso de falha</td>
-      <td style="padding: 8px;">Requer lógica personalizada para reconectar</td>
+      <td style="padding: 8px; text-align: center;">Estado da conexão</td>
+      <td style="padding: 8px; text-align: center;">Reestabelece automaticamente a conexão em caso de falha</td>
+      <td style="padding: 8px; text-align: center;">Requer lógica personalizada para reconectar</td>
     </tr>
     <tr>
-      <td style="padding: 8px;">Complexidade</td>
-      <td style="padding: 8px;">Simples de implementar</td>
-      <td style="padding: 8px;">Mais complexo, mas poderoso</td>
+      <td style="padding: 8px; text-align: center;">Complexidade</td>
+      <td style="padding: 8px; text-align: center;">Simples de implementar</td>
+      <td style="padding: 8px; text-align: center;">Mais complexo, mas poderoso</td>
     </tr>
     <tr>
-      <td style="padding: 8px;">Casos de uso</td>
-      <td style="padding: 8px;">Notificações em tempo real, feeds de notícias</td>
-      <td style="padding: 8px;">Jogos, chats, sistemas de negociação</td>
+      <td style="padding: 8px; text-align: center;">Casos de uso</td>
+      <td style="padding: 8px; text-align: center;">Notificações em tempo real, feeds de notícias</td>
+      <td style="padding: 8px; text-align: center;">Jogos, chats, sistemas de negociação</td>
     </tr>
   </tbody>
 </table>
