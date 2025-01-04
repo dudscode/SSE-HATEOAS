@@ -1,1 +1,49 @@
-<p>call-ticket works!</p>
+
+<section class="call-ticket">
+    <h2>Chame o proximo cliente</h2>
+    <span>Ultima senha chamada</span>
+    <h3>{{ !lastTicket.id ? '-' : lastTicket.id }}</h3>
+    
+    
+    <h2>Senhas</h2>
+    <div class="call-ticket_container">
+        <mat-list class="call-ticket_list">
+            
+            @if (ticketNormalList.length) {
+                <div class="call-ticket_list-title">
+                    <p>Comum</p>
+                    <button mat-fab matTooltip="Primary" color="primary" aria-label="Chamar proxima senha Comum"(click)="callNextTicket(ticketNormalList[0])">
+                        <mat-icon>queue_play_next</mat-icon>
+                    </button>
+                </div>
+            }
+            @for( ticket of ticketNormalList; track ticket.id){
+        
+            <mat-list-item >
+                <span matListItemTitle>{{ ticket.id}}</span>
+                <span matListItemLine>{{ ticket.name }}</span>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            }
+        </mat-list>
+        <mat-list class="call-ticket_list">
+            @if (ticketPreferredList.length) {
+
+                <div class="call-ticket_list-title">
+                    <p>Preferencial</p>
+                    <button mat-fab matTooltip="Primary" color="primary" aria-label="Chamar proxima senha preferencial" (click)="callNextTicket(ticketPreferredList[0])">
+                      <mat-icon>queue_play_next</mat-icon>
+                    </button>
+                </div>
+            }
+            @for( ticket of ticketPreferredList; track ticket.id){
+        
+            <mat-list-item>
+                <span matListItemTitle>{{ ticket.id}}</span>
+                <span matListItemLine>{{ ticket.name }}</span>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            }
+        </mat-list>
+    </div>
+</section>

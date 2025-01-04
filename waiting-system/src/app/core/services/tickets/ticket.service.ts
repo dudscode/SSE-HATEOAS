@@ -22,7 +22,7 @@ export class TicketService {
     return this.http.post<ITicket>(this.api, ticket);
   }
 
-  getMessages(ticket: number): Observable<any> {
+  getTicketCalled(ticket: number): Observable<any> {
 
     return Observable.create(
       (observer: any) => {
@@ -49,6 +49,22 @@ export class TicketService {
         }
       }
     )
+  };
+
+  callTicket(ticket: number): Observable<any> {
+    return this.http.post(`${this.api}/call/${ticket}`, {});
+  };
+  getTicketsNormal(): Observable<ITicket[]> {
+    return this.http.get<ITicket[]>(`${this.api}/normal`);
+  }
+  getTicketsPreferred(): Observable<ITicket[]> {
+    return this.http.get<ITicket[]>(`${this.api}/preferred`);
+  }
+  getHatetoas(url: string): Observable<any> {
+    return this.http.get(url);
+  }
+  postHatetoas(url: string, body: any): Observable<any> {
+    return this.http.post(url, body);
   }
 
 }

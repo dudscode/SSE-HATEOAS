@@ -25,7 +25,7 @@
 
 }
 
-@if(lastTickets.length){
+@if(!showGetTicket){
     <section class="created-ticket ticket">
         @if(!showGetTicket && !isMyTurn ){
     
@@ -42,7 +42,7 @@
         @for( ticket of lastTickets; track ticket.id){
     
             <mat-list-item>
-              <span matListItemTitle>{{ ticket.id}}</span>
+              <span matListItemTitle>{{ ticket.idTicket}}</span>
               <span matListItemLine>{{ ticket.name }}</span>
               <span matListItemLine>{{ ticket.preferredTicket ? 'Senha preferencial': 'Senha Comum'}}</span>
             </mat-list-item>

@@ -8,16 +8,23 @@ import jakarta.persistence.Id;
 @Entity
 public class TicketCalled {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
 
+    private Long idTicket;
 
-    public TicketCalled(Long id, String name) {
+
+
+    public TicketCalled() {}
+
+    public TicketCalled(Long id, String name, Long idTicket) {
         this.id = id;
         this.name = name;
+        this.idTicket = idTicket;
     }
-    public TicketCalled() {}
+
     public Long getId() {
         return id;
     }
@@ -32,5 +39,13 @@ public class TicketCalled {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Long getIdTicket() {
+        return idTicket;
+    }
+
+    public void setIdTicket(Long idTicket) {
+        this.idTicket = idTicket;
     }
 }

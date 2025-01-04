@@ -93,7 +93,7 @@ public class TicketController {
     }
 
     @PostMapping
-    public EntityModel<Ticket> addPlayer(@RequestBody Ticket ticket) {
+    public EntityModel<Ticket> addTicket(@RequestBody Ticket ticket) {
         Ticket savedPlayer = ticketService.saveTicket(ticket);
         return EntityModel.of(savedPlayer,
                 WebMvcLinkBuilder.linkTo(
@@ -110,6 +110,7 @@ public class TicketController {
         ticketService.callTicketById(id);
         return ResponseEntity.ok().build();
     }
+
     @GetMapping("/last")
     public List<EntityModel<TicketCalled>> getLastTicket() {
         List<TicketCalled> tickets = ticketService.findAllTicketsCalled();

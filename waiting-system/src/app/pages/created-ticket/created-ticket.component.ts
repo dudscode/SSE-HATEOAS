@@ -79,10 +79,10 @@ export class CreatedTicketComponent implements OnInit {
     });
   }
   getMyTicket() {
-    this.ticketService.getMessages(this.myTicket.id).subscribe({
+    this.ticketService.getTicketCalled(this.myTicket.id).subscribe({
       next: (message) => {
         if(message?.isMyTicket){
-          this.isMyTurn =true
+          this.isMyTurn =true;
           this._snackBar.open('Sua vez chegou', 'Close')
         }
         this.getTickets();

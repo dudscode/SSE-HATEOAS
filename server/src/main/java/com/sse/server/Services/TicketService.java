@@ -36,7 +36,7 @@ public void callTicketById(Long id) {
     saveTicketCalled(ticket.get());
     ticketRepository.deleteById(ticket.get().getId());
     for (SseEmitter emitter : emitters) {
-        emitter.onTimeout(() -> emitters.remove(emitter));
+//        emitter.onTimeout(() -> emitters.remove(emitter));
         try {
             emitter.send(ticket);
         } catch (Exception e) {
@@ -60,7 +60,7 @@ public List<TicketCalled> ticketCalled(){
         return  ticketCalledRepository.findAll();
     }
     public TicketCalled saveTicketCalled (Ticket t){
-        TicketCalled ticket = new TicketCalled(t.getId(),t.getName() );
+        TicketCalled ticket = new TicketCalled(null,t.getName(), t.getId() );
         return  ticketCalledRepository.save(ticket);
     }
     public Optional<Ticket> findTicketById(Long id){

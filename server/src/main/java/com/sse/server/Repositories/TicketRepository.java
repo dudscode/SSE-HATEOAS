@@ -9,9 +9,9 @@ import java.util.Optional;
 
 public interface TicketRepository extends JpaRepository<Ticket, Long> {
 
-    @Query("SELECT t FROM Ticket t WHERE t.isPreferredTicket = true ORDER BY t.id DESC")
+    @Query("SELECT t FROM Ticket t WHERE t.isPreferredTicket = true ORDER BY t.id ASC")
     List<Ticket> findAllPreferredTicketsDesc();
 
-    @Query("SELECT t FROM Ticket t WHERE t.isPreferredTicket = false ORDER BY t.id DESC")
+    @Query("SELECT t FROM Ticket t WHERE t.isPreferredTicket = false ORDER BY t.id ASC")
     List<Ticket> findAllNormalTicketsDesc();
 }
