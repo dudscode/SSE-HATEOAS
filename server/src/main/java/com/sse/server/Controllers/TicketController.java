@@ -1,6 +1,7 @@
 package com.sse.server.Controllers;
 
 import com.sse.server.Entities.Ticket;
+import com.sse.server.Entities.TicketCalled;
 import com.sse.server.Services.TicketService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.EntityModel;
@@ -17,7 +18,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/tickets")
-@CrossOrigin(origins = "http://127.0.0.1:5500")
+@CrossOrigin(origins = "http://localhost:4200/")
 public class TicketController {
     @Autowired
     private TicketService ticketService;
@@ -109,4 +110,14 @@ public class TicketController {
         ticketService.callTicketById(id);
         return ResponseEntity.ok().build();
     }
+    @GetMapping("/last")
+    public List<EntityModel<TicketCalled>> getLastTicket() {
+        List<TicketCalled> tickets = ticketService.findAllTicketsCalled();
+        return  tickets.stream().map(
+                ticket ->  EntityModel.of(ticket, WebMvcLinkBuilder.linkTo(
+                                WebMvcLinkBuilder.methodOn(TicketController.class).getLastTicket()
+                        ).withSelfRel()
+                )).collect(Collectors.toList());
+    }
+
 }

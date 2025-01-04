@@ -1,0 +1,18 @@
+@import "../node_modules/@angular/material/prebuilt-themes/purple-green.css";
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: roboto, sans-serif;
+    
+}
+.cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+body, main{
+    min-height: 100vh;
+    background-color: #1e1a1d;
+}

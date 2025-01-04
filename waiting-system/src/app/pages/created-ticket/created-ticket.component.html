@@ -1,0 +1,54 @@
+@if(showGetTicket) {
+    <section class="created-ticket">
+        <div>
+            <form class="example-form" [formGroup]="profileForm">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Nome</mat-label>
+                  <input matInput placeholder="Digite seu nome" formControlName="name">
+                </mat-form-field>
+            </form>
+              
+        </div>
+        <div class="cards">
+            <app-card-action icon="accessible" title="Senha Preferencial" (clickAction)="action('preferred')"></app-card-action>
+            <app-card-action icon="person" title="Senha comum" (clickAction)="action('normal')"></app-card-action>
+        </div>
+    
+    
+    </section>
+}
+@if (showLoading){
+    <section class="created-ticket">
+        <mat-spinner mode="indeterminate"></mat-spinner>
+    
+    </section>
+
+}
+
+@if(lastTickets.length){
+    <section class="created-ticket ticket">
+        @if(!showGetTicket && !isMyTurn ){
+    
+            <h2>Sua Senha</h2>
+            <h3>{{ myTicket.id}}</h3>
+        }
+        @if(!showGetTicket && isMyTurn ){
+    
+            <h2>CHEGOU SUA VEZ</h2>
+            <h3>{{ myTicket.id}}</h3>
+        }
+       <h2>Utimas senhas chamadas</h2>
+       <mat-list>
+        @for( ticket of lastTickets; track ticket.id){
+    
+            <mat-list-item>
+              <span matListItemTitle>{{ ticket.id}}</span>
+              <span matListItemLine>{{ ticket.name }}</span>
+              <span matListItemLine>{{ ticket.preferredTicket ? 'Senha preferencial': 'Senha Comum'}}</span>
+            </mat-list-item>
+        }
+        <mat-divider></mat-divider>
+      </mat-list>
+    </section>
+
+}

@@ -1,0 +1,19 @@
+.created-ticket{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    margin: 50px 0;
+    h1 {
+        margin: 20px 0;
+    }
+}
+
+.ticket {
+    color: white;
+    h3{
+        font-size: 60px;
+    }
+
+}

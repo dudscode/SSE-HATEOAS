@@ -94,7 +94,7 @@ Saiba mais sobre os frameworks que usamos.
 
 ## Como executar seu frontend
 
-### dentro da pasta app
+### dentro da pasta waiting-system
 
 ### Instale as depencias:
 
